@@ -12,7 +12,7 @@
 import com.microsoft.spark.sqlanalytics
 from com.microsoft.spark.sqlanalytics.Constants import Constants
 
-#date = '2025-03-25'
+#Date = '2025-03-25'
 
 #fact_averagecosts_path = 'abfss://o2comsprodbronzestgfs@o2comsprodbronzestg.dfs.core.windows.net/test/2025-03-25/fact.averagecosts.dlm.gz'
 fact_transactions_path = 'abfss://o2comsprodbronzestgfs@o2comsprodbronzestg.dfs.core.windows.net/test/'+Date+'/fact.transactions.dlm.gz'
