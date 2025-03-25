@@ -14,7 +14,7 @@ There are 4 files which represents :
    'transactions' fact table and 'clnd' dimention table is loaded in the data frame and any NULLS and duplicates are revomed (if any) using the user defined function 'remove_duplicates_and_null()'.
    Inner Joined is performed between transactions'transactions' fact table and 'clnd' dimention table using fscldt_id as foriegn key.
    The data is then aggregated as sum of 'sales_units','sales_dollars','discount_dollars' grouping by 'pos_site_id','sku_id', 'price_substate_id', 'type','fsclwk_id'.
-3. Consumption layer : The final data is writen into dedicated SQL Pool or sql data wareshouse and is staged between the process in the ADLS.
+3. Consumption (Gold layer) : The final data is writen into dedicated SQL Pool or sql data wareshouse and is staged between the process in the ADLS.
 
 **Note :** 
 1.The final aggregated data is only available for the date '2018-02-04' and above. If the data is required before this date then a new 'clnd' table would be required or the dates can be manully generated.
