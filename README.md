@@ -6,3 +6,14 @@ There are 4 files which represents :
 2. ER_Diagram.drawio.png - Proposed Entitiy Relationship Diagram wrt column names.
 3. NB_Total_Sales.py - The Pyspark Notebook which is using the transformation.
 4. PL_Total_Sales.zip - This will the template of the pipelines which can be imported to synapse(Azure Orchestration tool) envrionment only.
+
+
+Explaination of Solution :
+1. Ingestion (bronze layer) - The data was available to as files and is directly uploaded to Azure Data lake Storage Gen2 with the partition folder as '/test/2025-03-25/*'. In case the data is incrementally loaded then partition folder will be created with the date of ingestion.
+2. Transformation (Silver layer) - Pyspark notebook is used for the transformation.
+   'transactions' fact table and 'clnd' dimention table is loaded in the data frame and any NULLS and duplicates are revomed (if any) using the user defined function 'remove_duplicates_and_null()'.
+   Inner Joined is performed between transactions'transactions' fact table and 'clnd' dimention table using fscldt_id as foriegn key.
+   The data is then aggregated as sum of 'sales_units','sales_dollars','discount_dollars' grouping by 'pos_site_id','sku_id', 'price_substate_id', 'type','fsclwk_id'.
+3. Consumption layer : The final data is writen into dedicated SQL Pool or sql data wareshouse and is staged between the process in the ADLS.
+
+Note : The final aggregated data is only available for and after the date ''.
