@@ -16,9 +16,9 @@ Explaination of Solution :
    The data is then aggregated as sum of 'sales_units','sales_dollars','discount_dollars' grouping by 'pos_site_id','sku_id', 'price_substate_id', 'type','fsclwk_id'.
 3. Consumption layer : The final data is writen into dedicated SQL Pool or sql data wareshouse and is staged between the process in the ADLS.
 
-**Note :** The final aggregated data is only available for the date '2018-02-04' and above. If the data is required before this date then a new 'clnd' table would be required or the dates can be manully generated.
-
-
+**Note :** 
+1.The final aggregated data is only available for the date '2018-02-04' and above. If the data is required before this date then a new 'clnd' table would be required or the dates can be manully generated.
+2. The code can use be for incremental loads. The path of the incremental data should be in 'yyyy-MM-dd' folder inside storage and the pipline needs to be schedule at most on the same day.
 
 
 
