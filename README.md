@@ -8,7 +8,7 @@ There are 4 files which represents :
 4. PL_Total_Sales.zip - This will the template of the pipelines which can be imported to synapse(Azure Orchestration tool) envrionment only.
 
 
-Explaination of Solution :
+**Explaination of Solution :**
 1. Ingestion (bronze layer) - The data was available to as files and is directly uploaded to Azure Data lake Storage Gen2 with the partition folder as '/test/2025-03-25/*'. In case the data is incrementally loaded then partition folder will be created with the date of ingestion.
 2. Transformation (Silver layer) - Pyspark notebook is used for the transformation.
    'transactions' fact table and 'clnd' dimention table is loaded in the data frame and any NULLS and duplicates are revomed (if any) using the user defined function 'remove_duplicates_and_null()'.
@@ -22,7 +22,7 @@ Explaination of Solution :
 
 
 
-How to Test :
+**How to Test :**
 1. Import the file into snapse.
 2. Edit the notebook and write the location for the files where you have uploaded the data.
 3. In the last cell change the path the staging folder and for writing the data please mention the sql pool name.
