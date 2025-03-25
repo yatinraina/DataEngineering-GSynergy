@@ -23,7 +23,7 @@ There are 4 files which represents :
 
 
 **How to Test :**
-1. Import the file into snapse.
+1. Import the 'PL_Total_Sales.zip' file into snapse.
 2. Edit the notebook and write the location for the files where you have uploaded the data.
 3. In the last cell change the path the staging folder and for writing the data please mention the sql pool name.
 Please use the change the auth mechanism if the notebook fails in your environmnet.
