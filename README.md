@@ -17,3 +17,12 @@ Explaination of Solution :
 3. Consumption layer : The final data is writen into dedicated SQL Pool or sql data wareshouse and is staged between the process in the ADLS.
 
 **Note :** The final aggregated data is only available for the date '2018-02-04' and above. If the data is required before this date then a new 'clnd' table would be required or the dates can be manully generated.
+
+
+
+How to Test :
+1. Import the file into snapse.
+2. Edit the notebook and write the location for the files where you have uploaded the data.
+3. In the last cell change the path the staging folder and for writing the data please mention the sql pool name.
+Please use the change the auth mechanism if the notebook fails in your environmnet.
+   
