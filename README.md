@@ -19,6 +19,7 @@ There are 4 files which represents :
 **Note :** 
 
 1.The final aggregated data is only available for the date '2018-02-04' and above. If the data is required before this date then a new 'clnd' table would be required or the dates can be manully generated.
+
 2. The code can use be for incremental loads. The path of the incremental data should be in 'yyyy-MM-dd' folder inside storage and the pipline needs to be schedule at most on the same day.
 
 
